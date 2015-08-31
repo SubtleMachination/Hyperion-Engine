@@ -1,8 +1,8 @@
 //
 //  GameViewController.swift
-//  Plunder Mountain
+//  Trixel
 //
-//  Created by Alicia Cicon on 8/24/15.
+//  Created by Alicia Cicon on 8/30/15.
 //  Copyright (c) 2015 Runemark. All rights reserved.
 //
 
@@ -19,7 +19,11 @@ class GameViewController: UIViewController {
             let skView = self.view as! SKView
             skView.showsFPS = true
             skView.showsNodeCount = true
-//            skView.shouldCullNonVisibleNodes = false // DANGER!
+            skView.showsDrawCount = true
+            skView.shouldCullNonVisibleNodes = false // You take responsibility for culling, but this reduces overhead
+            
+            /* Sprite Kit applies additional optimizations to improve rendering performance */
+            skView.ignoresSiblingOrder = true
             
             /* Set the scale mode to scale to fit the window */
             scene.scaleMode = .AspectFill
